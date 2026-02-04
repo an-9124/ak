@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | ASW Science</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --p-blue: #e0f7fa; --p-blue-text: #00838f;
+            --p-purple: #f3e5f5; --p-purple-text: #6a1b9a;
+            --p-pink: #fff0f3; --p-pink-text: #c62828;
+            --p-green: #e8f5e9; --p-green-text: #2e7d32;
+            --text-dark: #2d3436;
+            --white: #ffffff;
+            --gradient-main: linear-gradient(to right, #a29bfe, #ff7675, #fab1a0);
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif;
+            background-color: #fdfdfd;
+            margin: 0; padding: 0;
+            color: var(--text-dark);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 50px 20px;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
+
+       
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+
+        /* --- CARD GRID --- */
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .week-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        /* --- MOVING ICON IN CARD --- */
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: floatingIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatingIcon {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .week-card:hover .card-icon {
+            animation: pulseIcon 0.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseIcon {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .week-content h3 { margin: 0; font-size: 1.2rem; }
+        .week-content p { margin: 5px 0 25px 0; font-size: 0.95rem; opacity: 0.7; }
+
+        /* Card Colors */
+        .w1 { background-color: var(--p-blue); color: var(--p-blue-text); }
+        .w2 { background-color: var(--p-purple); color: var(--p-purple-text); }
+        .w3 { background-color: var(--p-pink); color: var(--p-pink-text); }
+        .w4 { background-color: var(--p-green); color: var(--p-green-text); }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: inherit;
+            transition: 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .btn:hover {
+            background: #2d3436;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .month-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Welcome back, Chamathka! 👋</h1>
+       
+    </header>
+
+    <div class="container">
+        <div class="month-grid">
+            
+            <div class="week-card w1">
+                <i class="fas fa-dna card-icon"></i>
+                <div class="week-content">
+                    <h3>Biology Unit 01</h3>
+                    <p>ජීවයේ රසායනික පදනම</p>
+                    <a href="#" class="btn"><i class="fas fa-play"></i> Video Lesson</a>
+                </div>
+            </div>
+
+            <div class="week-card w2">
+                <i class="fas fa-flask card-icon"></i>
+                <div class="week-content">
+                    <h3>Chemistry Unit 02</h3>
+                    <p>පදාර්ථයේ ව්‍යුහය</p>
+                    <a href="#" class="btn"><i class="fas fa-play"></i> Video Lesson</a>
+                </div>
+            </div>
+
+             <div class="week-card w2">
+                <i class="fas fa-atom card-icon"></i>
+                <div class="week-content">
+                    <h3>Chemistry Unit 02</h3>
+                    <p>පදාර්ථයේ ව්‍යුහය</p>
+                    <a href="#" class="btn"><i class="fas fa-play"></i> Video Lesson</a>
+                </div>
+            </div>
+
+            <div class="week-card w3">
+                <i class="fas fa-microscope card-icon"></i>
+                <div class="week-content">
+                    <h3>Physics Unit 01</h3>
+                    <p>මිනුම හා ඒකක</p>
+                    <a href="#" class="btn"><i class="fas fa-play"></i> Video Lesson</a>
+                </div>
+            </div>
+
+            <div class="week-card w4">
+                <i class="fas fa-lock card-icon" ></i>
+                <div class="week-content">
+                    <h3>Biology Unit 02</h3>
+                    <p>සෛලීය පදනම</p>
+                    <a href="#" class="btn"><i class="fas fa-play"></i> Video Lesson</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
